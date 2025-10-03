@@ -1,0 +1,225 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% To select a journal, use its code for the 
+% journal= option in the \documentclass command.
+% The journal codes for this template are:
+
+% Wearable Technologies: wet
+% Data and Policy: dap
+% Data-centric Engineering: dce
+% Environmental Data Science: eds
+% Programmable Materials: prm
+% Journal of Nonlinear Waves: jnw
+% Flow: flw
+% Judgment and Decision Making: jdm
+% Psychometrika: psy
+% Forum of Mathematics, Pi: fmp
+% Forum of Mathematics, Sigma: fms
+% Glasgow Mathematical Journal: gmj
+% Research Synthesis Methods: rsm
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[journal=eds]{CUP-PN}%
+
+% If using any of the following journal options:
+%   wet, dap, dce, eds, prm, jnw, flw, jdm, psy, rsm
+% then uncomment the following line:
+\addbibresource{bibliography_zotero.bib}
+
+
+%%%% Packages
+\usepackage{graphicx}
+\usepackage{multicol,multirow}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{mathrsfs}
+\usepackage{amsthm}
+\usepackage{rotating}
+\usepackage{appendix}
+\usepackage{ifpdf}
+\usepackage[T1]{fontenc}
+\usepackage{newtxtext}
+% \usepackage{newtxmath}
+\usepackage{textcomp}
+\usepackage{xcolor}
+\usepackage{lipsum}
+\usepackage[colorlinks,allcolors=blue]{hyperref}
+\usepackage{lineno}
+\usepackage{subcaption}
+\usepackage{lscape}
+\usepackage{enumitem}
+\usepackage{makecell}
+\usepackage{microtype}
+\usepackage{floatrow}
+\usepackage{verbatim}
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\theoremstyle{definition}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{example}[theorem]{Example}
+\numberwithin{equation}{section}
+
+\jname{Environmental Data Science}
+\articletype{PREPRINT}
+%\artid{20}
+\jyear{2025}
+%\jvol{4}
+%\jissue{1}
+\raggedbottom
+
+\graphicspath{{figures/}}
+
+\newcommand{\detailtexcount}[1]{%
+  \immediate\write18{texcount -merge -sum -q #1.tex > #1.wcdetail }%
+  \verbatiminput{#1.wcdetail}%
+}
+
+% titlebox
+\usepackage{tikzpagenodes,eso-pic,graphicx,xcolor}
+\definecolor{cambridgeblue}{HTML}{A3C1AD}
+
+\newlength\CoverSidePad     \setlength\CoverSidePad{2.5\parindent}       % left/right padding
+\newlength\CoverTopPad      \setlength\CoverTopPad{1.75\baselineskip}       % top padding
+\newlength\CoverBottomLift  \setlength\CoverBottomLift{.175\textheight}  % how far above bottom to stop
+
+
+% Rounded Cambridge-blue card behind page 1
+\AddToHook{shipout/background}{%
+  \ifnum\value{page}=1\relax
+  \begin{tikzpicture}[remember picture,overlay]
+    % insets from paper edge so it surrounds the header logo too
+    \def\Inset{8mm}
+    \def\BottomLift{30mm}
+    \path (current page.north west) ++(\CoverSidePad,-\CoverTopPad) coordinate (NW);
+    \path (current page.south east) ++(-\CoverSidePad,\CoverBottomLift) coordinate (SE);
+    \filldraw[rounded corners=8pt,
+              fill=cambridgeblue!12,
+              draw=none,
+              line width=0.8pt] (NW) rectangle (SE);
+  \end{tikzpicture}%
+  \fi
+}
+
+
+\begin{document}
+
+% Don't count these!
+%TC:ignore
+
+\begin{Frontmatter}
+
+\title[Article Title]{Making Tunable Parameters State-Dependent in Weather and Climate Models with Reinforcement Learning}
+
+% There is no need to include ORCID IDs in your .pdf; this information is captured by the submission portal when a manuscript is submitted. 
+\author[1]{Pritthijit Nath}
+\author[1]{Sebastian Schemm}
+\author[1,2]{Henry Moss}
+\author[1]{Peter Haynes}
+\author[3]{Emily Shuckburgh}
+\author[4]{Mark Webb}
+
+\authormark{P. Nath \textit{et al}.}
+
+
+\address[1]{\orgdiv{Department of Applied Mathematics and Theoretical Physics}, \orgname{University of Cambridge}, \orgaddress{\country{UK}}}
+\address[2]{\orgdiv{School of Mathematical Sciences}, \orgname{Lancaster University}, \orgaddress{\country{UK}}}
+\address[3]{\orgdiv{Department of Computer Science and Technology}, \orgname{University of Cambridge}, \orgaddress{\country{UK}}}
+\address[4]{\orgname{Met Office Hadley Centre}, \orgaddress{\country{UK}}. \email{pn341@cam.ac.uk}}
+
+\authormark{P. Nath et al.}
+
+\keywords{reinforcement learning, weather and climate models, federated learning, parametrisations, online learning}
+
+
+% \keywords[MSC Codes]{\codes[Primary]{CODE1}; \codes[Secondary]{CODE2, CODE3}}
+
+\abstract{
+\input{s00a_abstract}
+}
+
+\plainsummary{
+\input{s00b_plainsummary}
+}
+
+% \begin{keypoints}
+% \item Instead of static, pre-tuned coefficients, reinforcement learning (RL) frames tunable parameters as functions of the model state, enabling online parametrisation schemes that adapt as the simulation evolves.
+% \item When applied to bias correction, radiative–convective equilibrium, and energy balance models, RL-assisted schemes consistently reduce errors relative to static baselines.
+% \item Multiple agents specialise by latitude and synchronise periodically to deliver geographically specialised control and accelerate convergence, improving tropical and mid-latitude accuracy.
+% \end{keypoints}
+
+\end{Frontmatter}
+
+%TC:endignore
+
+\clearpage
+\linenumbers
+
+\section{Introduction}
+\label{sec:introduction}
+\input{s01_introduction}
+
+\clearpage
+
+\section{Methods}
+\label{sec:methods}
+\input{s02_methods}
+
+\clearpage
+
+\section{Results and Discussion}
+\label{sec:results_and_discussion}
+\input{s03_results_and_discussion}
+
+\clearpage
+
+\section{Conclusion}
+\label{sec:conclusion}
+\input{s04_conclusion}
+
+\clearpage
+
+% Don't count these!
+%TC:ignore
+\begin{Backmatter}
+
+\paragraph{Code and Data Availability}~%
+\input{s05a_code_data_availability}
+
+\paragraph{LLM Usage}~%
+\input{s05b_llm_usage}
+
+\paragraph{Acknowledgments}~%
+\input{s05c_acknowledgements}
+
+% \bibliography{bibliography_zotero}
+\printbibliography
+
+\begin{appendix}
+
+\renewcommand\thesection{Appendix \Alph{section}}
+\renewcommand\thesubsection{\Alph{section}.\arabic{subsection}} 
+\renewcommand\thetable{\Alph{section}.\arabic{table}}  
+\renewcommand\thefigure{\Alph{section}.\arabic{figure}}  
+\setcounter{table}{0}
+\setcounter{figure}{0}
+
+\input{app_additional_methods}
+\label{app:additional_methods}
+
+\clearpage
+
+\normalsize
+
+\input{app_additional_results}
+\label{app:additional_results}
+
+\end{appendix}
+
+\end{Backmatter}
+
+\clearpage
+
+% \detailtexcount{main}
+%TC:endignore
+
+\end{document}
