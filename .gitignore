@@ -1,0 +1,11 @@
+# Ignore everything
+*
+
+# Except these files
+!*.pdf
+!*.cls
+!*.bib
+!*.tex
+!*.eps
+!*.md
+!.gitignore
