@@ -1,10 +1,10 @@
 %%
-%% This is file `CUP-JNL-DTM.cls',
+%% This is file `CAM-MODERN.cls',
 %% generated with the docstrip utility.
 %%
 %% The original source files were:
 %%
-%% classes.dtx  (with options: `CUP-JNL-DTM')
+%% classes.dtx  (with options: `CAM-MODERN')
 %%
 %% This is a generated file.
 %%
@@ -52,8 +52,9 @@
 %%   Grave accent  \`     Left brace    \{     Vertical bar  \|
 %%   Right brace   \}     Tilde         \~}
 \NeedsTeXFormat{LaTeX2e}[1995/12/01]
-\ProvidesClass{CUP-JNL-DTM}
-              [2020/05/04 v0.1: An authoring template for CUP DTM articles]
+\ProvidesClass{CAM-MODERN}
+              [2025/10/03 v0.1 LaTeX template for Cambridge-style articles and preprints
+   Based on the Cambridge University Press CUP-JNL-DTM class]
 
 \newif\if@restonecol
 \newif\if@titlepage   \@titlepagefalse
@@ -87,7 +88,7 @@
 \RequirePackage{soul}
 
 
-\newcommand*\cup@warning{\ClassWarning{CUP-JNL-DTM}}
+\newcommand*\cup@warning{\ClassWarning{CAM-MODERN}}
 \newcommand*\cup@ifundefined[1]{%
   \begingroup\expandafter\expandafter\expandafter\endgroup
   \expandafter\ifx\csname #1\endcsname\relax
