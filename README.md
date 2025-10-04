@@ -7,10 +7,21 @@ This repository contains a LaTeX project for creating documents using the `cam-m
 Ensure the following tools are installed on your system:
 
 1. **Tectonic**: A modern LaTeX compiler.
-   - Installation: Follow the instructions at [Tectonic Installation](https://tectonic-typesetting.github.io/en-US/install.html).
+   - Installation (one-liner):
+     ```bash
+     curl --proto '=https' --tlsv1.2 -fsSL https://drop-sh.fullyjustified.net | sh
+     mv tectonic ~/.local/bin/tectonic && chmod +x ~/.local/bin/tectonic && export PATH=$HOME/.local/bin:$PATH
+     ```
+     Or see [Tectonic Installation](https://tectonic-typesetting.github.io/en-US/install.html).
 
 2. **Biber**: A bibliography processor required for `biblatex`.
-   - Installation: Download the latest version from the [Biber GitHub Releases](https://github.com/plk/biber/releases) and follow the installation instructions.
+   - Installation (one-liner for Linux x86_64):
+     ```bash
+     wget https://sourceforge.net/projects/biblatex-biber/files/biblatex-biber/2.17/binaries/Linux/biber-linux_x86_64.tar.gz -O biber-linux_x86_64.tar.gz
+     tar -xzf biber-linux_x86_64.tar.gz
+     mv biber ~/bin/biber && chmod +x ~/bin/biber && export PATH=$HOME/bin:$PATH
+     ```
+     Or see [Biber GitHub Releases](https://github.com/plk/biber/releases).
 
 ## Files in the Repository
 
