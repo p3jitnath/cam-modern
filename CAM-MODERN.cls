@@ -1183,7 +1183,7 @@ properly cited.
 %% Opening Page Style      
 \def\ps@titlepage{%
      \def\@oddhead{{\hbox to \textwidth{%
-      \vbox to 0pt{\vskip-5pt\rlap{\hbox to \textwidth{\hfill \includegraphics[width=3.6cm]{ucam-logo-colour-preferred.eps}
+      \vbox to 0pt{\vskip-5pt\rlap{\hbox to \textwidth{\hfill \includegraphics[width=3.6cm]{ucam-logo-colour-preferred.pdf}
     %   \quad\includegraphics{DataMath_Logo}
       \hspace*{-1pt}}}}%
       \vbox to 0pt{\vskip-7pt\rlap{\parbox{\textwidth}{\opheaderfont\begin{tabular*}{\textwidth}[b]{@{\extracolsep{\fill}}@{}l@{}}%
