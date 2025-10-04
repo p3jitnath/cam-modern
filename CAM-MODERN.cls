@@ -53,7 +53,7 @@
 %%   Right brace   \}     Tilde         \~}
 \NeedsTeXFormat{LaTeX2e}[1995/12/01]
 \ProvidesClass{CAM-MODERN}
-              [2025/10/03 v0.1 LaTeX template for Cambridge-style articles and preprints
+              [2025/10/03 v0.1 UNOFFICIAL LaTeX template for Cambridge-style articles and preprints
    Based on the Cambridge University Press CUP-JNL-DTM class]
 
 \newif\if@restonecol
